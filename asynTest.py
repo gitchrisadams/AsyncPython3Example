@@ -15,6 +15,7 @@ async def call_url(url):
 futures = [call_url(url) for url in urls]
 
 # .run is not compatible with python 3.5, Maybe python 3.7?
+# https://stackoverflow.com/questions/52796630/python3-6-attributeerror-module-asyncio-has-no-attribute-run
 #asyncio.run(asyncio.wait(futures))
 loop = asyncio.get_event_loop()
 loop.run_until_complete(asyncio.wait(futures))
